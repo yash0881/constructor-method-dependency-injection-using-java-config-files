@@ -9,20 +9,14 @@ public class SpringConfigFile {
 
     @Bean
     public Address createAddressObj(){
-         Address ad = new Address();
-         ad.setCity("Pune");
-         ad.setHno(900);
-         ad.setPincode(9000282);
+         Address ad = new Address(900, "Pune", 234567);
          return ad;
     }
 
 
     @Bean
     public Student createStudentObj(){
-        Student st = new Student();
-        st.setAddress(createAddressObj());
-        st.setName("Vishal");
-        st.setRoll(20020);
+        Student st = new Student("Yash", 890, createAddressObj());
         return st;
     }
 
